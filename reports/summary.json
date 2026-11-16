@@ -1,0 +1,109 @@
+{
+  "employees": 6284,
+  "employee_years": 49648,
+  "years": [
+    2006,
+    2015
+  ],
+  "exits": {
+    "resignation": 385,
+    "retirement": 885,
+    "layoff": 215
+  },
+  "mean_total_exit_rate_pct": 2.997460812737709,
+  "mean_resignation_rate_pct": 0.760771440982754,
+  "top_department": "Customer Service",
+  "top_department_rate_pct": 2.5136918972054487,
+  "other_departments_rate_pct": 0.4843981470595151,
+  "first_year_rate_pct": 2.6896050399806155,
+  "ten_plus_rate_pct": 0.20882810580624028,
+  "survival_5y_pct": 92.02084001095058,
+  "survival_5y_top_department_pct": 85.57694027687704,
+  "train_years": [
+    2007,
+    2013
+  ],
+  "test_years": [
+    2014,
+    2015
+  ],
+  "test_employee_years": 10175,
+  "test_resignations": 81,
+  "best_model": "gradient_boosting",
+  "metrics": {
+    "tenure_only": {
+      "roc_auc": 0.909345975,
+      "pr_auc": 0.0862743356,
+      "brier": 0.0077809355,
+      "capture_top_5pct": 0.6666666667,
+      "capture_top_10pct": 0.6666666667,
+      "capture_top_20pct": 0.6666666667,
+      "roc_auc_ci_low": 0.8875346321,
+      "roc_auc_ci_high": 0.9326068957
+    },
+    "logistic_regression": {
+      "roc_auc": 0.8870371593,
+      "pr_auc": 0.0471645863,
+      "brier": 0.0077431372,
+      "capture_top_5pct": 0.4197530864,
+      "capture_top_10pct": 0.6666666667,
+      "capture_top_20pct": 0.7037037037,
+      "roc_auc_ci_low": 0.8641590128,
+      "roc_auc_ci_high": 0.9119005333
+    },
+    "gradient_boosting": {
+      "roc_auc": 0.9260194909,
+      "pr_auc": 0.1070903327,
+      "brier": 0.0075064342,
+      "capture_top_5pct": 0.3209876543,
+      "capture_top_10pct": 0.4938271605,
+      "capture_top_20pct": 0.987654321,
+      "roc_auc_ci_low": 0.914760607,
+      "roc_auc_ci_high": 0.9365830772
+    }
+  },
+  "precision_top_10pct_pct": 3.898635477582846,
+  "retirees_matching_age_rule_pct": 100.0,
+  "target_audit_auc": {
+    "any exit": 0.7317736519849891,
+    "retirement vs. stayers": 0.99461487463838,
+    "resignation vs. stayers": 0.9067464835053634,
+    "layoff vs. stayers": 0.5203740945482273
+  },
+  "fairness_gender": {
+    "Female": {
+      "employee_years": 5134,
+      "resignation_rate_pct": 0.9349435138,
+      "flagged_pct": 9.3494351383,
+      "precision_pct": 6.25,
+      "recall_pct": 62.5,
+      "false_flag_pct": 8.8478175383
+    },
+    "Male": {
+      "employee_years": 5041,
+      "resignation_rate_pct": 0.6546320175,
+      "flagged_pct": 10.8311842888,
+      "precision_pct": 1.8315018315,
+      "recall_pct": 30.303030303,
+      "false_flag_pct": 10.7028753994
+    }
+  },
+  "fairness_gender_tenure_rule": {
+    "Female": {
+      "employee_years": 5134,
+      "resignation_rate_pct": 0.9349435138,
+      "flagged_pct": 10.3428126217,
+      "precision_pct": 3.9548022599,
+      "recall_pct": 43.75,
+      "false_flag_pct": 10.0275265435
+    },
+    "Male": {
+      "employee_years": 5041,
+      "resignation_rate_pct": 0.6546320175,
+      "flagged_pct": 9.660781591,
+      "precision_pct": 6.7761806982,
+      "recall_pct": 100.0,
+      "false_flag_pct": 9.0654952077
+    }
+  }
+}

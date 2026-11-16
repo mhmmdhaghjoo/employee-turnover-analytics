@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turnover"
+version = "0.1.0"
+description = "Employee turnover analytics: descriptive rates, survival analysis, resignation risk and a fairness audit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mohammad Haghjoo" }]
+dependencies = ["numpy>=1.26", "pandas>=2.1", "scikit-learn>=1.4", "matplotlib>=3.8", "jinja2>=3.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+turnover = "turnover.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]  # the HTML template has long lines
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,5 @@
+scored on,leavers,roc_auc
+any exit,415,0.7317736519849891
+retirement vs. stayers,119,0.99461487463838
+resignation vs. stayers,81,0.9067464835053634
+layoff vs. stayers,215,0.5203740945482273
