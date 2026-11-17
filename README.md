@@ -129,6 +129,7 @@ pytest -q        # 14 tests, no dataset needed
 
 ## Related projects
 
+- [Checkout A/B Test (R)](https://github.com/mhmmdhaghjoo/checkout-ab-test-r): an A/B test of a new checkout in R, from power analysis to a Bayesian rollout recommendation
 - [Online Retail SQL Warehouse](https://github.com/mhmmdhaghjoo/online-retail-sql-warehouse): raw exports to a tested star schema and business analyses in SQL
 - [Customer Churn ML Pipeline](https://github.com/mhmmdhaghjoo/customer-churn-ml-pipeline): churn prediction as a tested Python package
 - [Text-to-SQL Assistant](https://github.com/mhmmdhaghjoo/text-to-sql-assistant): LLM-written SQL with a read-only guard and an evaluation set
