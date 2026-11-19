@@ -132,7 +132,7 @@ pytest -q        # 14 tests, no dataset needed
 - [Checkout A/B Test (R)](https://github.com/mhmmdhaghjoo/checkout-ab-test-r): an A/B test of a new checkout in R, from power analysis to a Bayesian rollout recommendation
 - [Online Retail SQL Warehouse](https://github.com/mhmmdhaghjoo/online-retail-sql-warehouse): raw exports to a tested star schema and business analyses in SQL
 - [Customer Churn ML Pipeline](https://github.com/mhmmdhaghjoo/customer-churn-ml-pipeline): churn prediction as a tested Python package
-- [Delivery Performance Analytics](https://github.com/mhmmdhaghjoo/delivery-performance-analytics): is the delivery promise kept? Real marketplace data and tested KPIs for logistics (Power BI dashboard in progress)
+- [Delivery Performance Analytics](https://github.com/mhmmdhaghjoo/delivery-performance-analytics): is the delivery promise kept? Real marketplace data, tested KPIs and a Power BI dashboard for logistics
 
 More about me: [mhmmdhaghjoo.github.io](https://mhmmdhaghjoo.github.io) and [github.com/mhmmdhaghjoo](https://github.com/mhmmdhaghjoo)
 
