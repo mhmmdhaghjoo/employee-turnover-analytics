@@ -106,7 +106,7 @@ raw yearly records ─▶ validated panel ─▶ rates ─▶ life table ─▶ 
 that is widely available online, for example on Kaggle. It is **not included
 in this repository**. Download it, place it in `data/`, and run the pipeline.
 The tests and CI use a small synthetic file in the same format, generated in
-`tests/conftest.py`.
+`src/turnover/demo.py`.
 
 The dataset appears to be simulated (retirement at exactly 60 or 65, for
 instance), so the findings illustrate the method and are not evidence about a
@@ -117,6 +117,37 @@ The project grew out of the People Analytics course at FAU Erlangen-Nürnberg
 for a first look at turnover. The Python implementation, the survival
 analysis, the out-of-time evaluation and both audits are my own extension.
 
+## Explorer app (Streamlit)
+
+`app/streamlit_app.py` lets an HR reader explore the same data at group level:
+
+- **Cohort survival:** share of a hiring cohort not yet resigned by tenure
+  year, split by department, tenure band, age band, gender or business unit,
+  with 95 % intervals. Curves stop where too few employees remain at risk.
+- **Where resignations concentrate:** resignation rate for any two attributes
+  at once (for example department by tenure band); cells with too few
+  employee-years are suppressed.
+- **Fairness of a risk list:** pick a model, a test period and a flag rate,
+  and see per gender or age band how many are flagged, how often the flag is
+  right, and how many leavers are missed.
+- **How to check this:** the checks I run before trusting a people analytics
+  result, and where such a forecast must not be used.
+
+It never shows an individual's score. Without the dataset it runs in a
+labelled demo mode on synthetic employees, which is what the screenshots show:
+
+![Explorer app, demo mode: cohort survival](reports/figures/app_survival.png)
+![Explorer app, demo mode: fairness of a risk list](reports/figures/app_fairness.png)
+
+```bash
+pip install -e ".[app]"
+streamlit run app/streamlit_app.py   # uses data/MFG10YearTerminationData.csv if present
+```
+
+The logic is in `turnover/explore.py`, unit-tested with a hand-calculated
+life table (`tests/test_explore.py`); a smoke test renders the app in demo
+mode (`tests/test_app.py`). Runs locally; not deployed.
+
 ## Run it
 
 Requires Python 3.10 or later.
@@ -124,7 +155,7 @@ Requires Python 3.10 or later.
 ```bash
 pip install -e ".[dev]"
 turnover run --data data/MFG10YearTerminationData.csv --out reports
-pytest -q        # 14 tests, no dataset needed
+pytest -q        # 21 tests, no dataset needed
 ```
 
 ## Related projects
@@ -132,7 +163,6 @@ pytest -q        # 14 tests, no dataset needed
 - [Checkout A/B Test (R)](https://github.com/mhmmdhaghjoo/checkout-ab-test-r): an A/B test of a new checkout in R, from power analysis to a Bayesian rollout recommendation
 - [Online Retail SQL Warehouse](https://github.com/mhmmdhaghjoo/online-retail-sql-warehouse): raw exports to a tested star schema and business analyses in SQL
 - [Customer Churn ML Pipeline](https://github.com/mhmmdhaghjoo/customer-churn-ml-pipeline): churn prediction as a tested Python package
-- [Delivery Performance Analytics](https://github.com/mhmmdhaghjoo/delivery-performance-analytics): is the delivery promise kept? Real marketplace data, tested KPIs and a Power BI dashboard for logistics
 
 More about me: [mhmmdhaghjoo.github.io](https://mhmmdhaghjoo.github.io) and [github.com/mhmmdhaghjoo](https://github.com/mhmmdhaghjoo)
 
